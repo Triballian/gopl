@@ -3,7 +3,7 @@
 package main
 
 import (
-    "buffio"
+    "bufio"
     "fmt"
     "os"
 )

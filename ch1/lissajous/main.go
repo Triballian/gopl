@@ -1,4 +1,4 @@
-//Lissajous generates GIF animations of random Lissajous figres.
+//Package lissajous generates GIF animations of random Lissajous figres.
 package lissajous
 
 import (
@@ -8,6 +8,7 @@ import (
 	"io"
 	"math"
 	"math/rand"
+	"os"
 )
 
 var palette = []color.Color{color.White, color.Black}
@@ -17,7 +18,11 @@ const (
 	blackIndex = 1 // next color in palte
 )
 
-// used by server3
+func main() {
+	Lissajous(os.Stdout)
+}
+
+// Lissajous is used by server3
 func Lissajous(out io.Writer) {
 	const (
 		cycles  = 5     // number of complete x oscillator revolutions

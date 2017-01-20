@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 	"sync"
+
+	"github.com/Triballian/gopl/ch1/lissajous"
 )
 
 var mu sync.Mutex
@@ -14,6 +16,9 @@ var count int
 func main() {
 	http.HandleFunc("/", handler)
 	http.HandleFunc("/count", counter)
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		lissajous.Lissajous(w)
+	})
 	log.Fatal(http.ListenAndServe("localhost:8000", nil))
 }
 
@@ -40,6 +45,3 @@ func counter(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Count %d\n", count)
 	mu.Unlock()
 }
-http.HandleFunc("/", func(w http.ReponseWriter, r *http.Request) {
-     lissajous(w)
- }

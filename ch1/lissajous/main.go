@@ -1,5 +1,5 @@
 //Lissajous generates GIF animations of random Lissajous figres.
-package main
+package lissajous
 
 import (
 	"image"
@@ -17,7 +17,8 @@ const (
 	blackIndex = 1 // next color in palte
 )
 
-func lissajous(out io.Writer) {
+// used by server3
+func Lissajous(out io.Writer) {
 	const (
 		cycles  = 5     // number of complete x oscillator revolutions
 		res     = 0.001 // angular resolution

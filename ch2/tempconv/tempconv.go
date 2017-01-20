@@ -1,7 +1,5 @@
-// Package tempconv performs Celsious and Fahrenheit conversions
+// Package tempconv performs Celius and Fahrenheit conversions
 package tempconv
-
-// CToF converts a Celsius temperature to Fahrenheit
 
 import "fmt"
 

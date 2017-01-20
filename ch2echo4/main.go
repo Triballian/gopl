@@ -5,6 +5,8 @@ import (
 	"flag"
 	"fmt"
 	"strings"
+
+	"github.com/Triballian/gopl/ch2/tempconv"
 )
 
 var n = flag.Bool("n", false, "omit trailing newlines")
@@ -16,4 +18,5 @@ func main() {
 	if !*n {
 		fmt.Println()
 	}
+	fmt.Println(tempconv.CToF(tempconv.BoilingC)) // "212°F"
 }
